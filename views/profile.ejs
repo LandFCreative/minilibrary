@@ -1,0 +1,75 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+      <div class="col-8">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-secondary">Logout</a>
+          </div>
+          <div class="mt-5 mb-5"></div>
+            <h2>Add a Library</h2>
+            <p>Submit a library close to you. Please include a location (or closest address) and a photo. If you are the owner and do not want it posted on the site, please contact Lost and Found Creative.</p>
+            <p>If you want a posted listing to be modified or removed- please submit a request for change via contact information.</p>
+            <p>Please make a fun appropriate name for the library if there isn't a plaque with one on the library.</p>
+
+            <form action="/library/createLibrary" enctype="multipart/form-data" method="POST">
+              <div class="form-row">
+                <label class="d-block mb-4"> <span class="form-label d-block">Library Name</span>
+                    <input name="name" type="text" class="form-control" placeholder="" />
+                  </label>
+
+                  <label class="d-block mb-4"> <span class="form-label d-block">Address</span>
+                    <input name="address1" type="text" class="form-control" placeholder=""/>
+                  </label>
+          
+                  <label class="d-block mb-4">
+                    <span class="form-label d-block">City</span>
+                    <input name="city" type="text" class="form-control" placeholder="" />
+                  </label>
+          
+                  <label class="d-block mb-4">
+                    <span class="form-label d-block">State/Province</span>
+                    <input name="state" type="text" class="form-control" placeholder="" />
+                  </label>
+          
+                  <label class="d-block mb-4">
+                    <span class="form-label d-block">Zip/Postal code</span>
+                    <input name="zip" type="text" class="form-control" placeholder="" />
+                  </label>
+          
+                  <label class="d-block mb-4">
+                    <span class="form-label d-block">Country</span>
+                    <input name="country" type="text"  class="form-control" placeholder=""  />
+                  </label>
+              </div>
+              <div class="mb-3">
+                <label for="comments" class="form-label">Comments</label>
+                <textarea class="form-control" id="comments" name="comments"></textarea>
+              </div>
+              <div class="col-12">
+                
+                  <div class="form-group row">
+                    <div class="col-sm-10 mb-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                          Check if you own this your library.
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+              <div class="mb-4">
+                <label for="imgUpload" class="form-label">Upload a photo</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-info mb-4" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+
+
+      </div>
+
+<%- include('partials/footer') -%>

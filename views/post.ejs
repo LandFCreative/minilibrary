@@ -1,0 +1,31 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <h1></h1>
+      <h2><%= libraries.name %></h2>
+      <img class="img-fluid" src="<%= libraries.image%>" />
+      <div class="row justify-content-between">
+       
+      </div>
+    </div>
+    <div class="col-3 mt-5 border">
+      
+      <div class="mt-5"> 
+      <h3><span clas="text-uppercase mt-5">Location: </span> </h3><BR>
+      <span class=""><%= libraries.address1,%> <%= libraries.city  %></span>
+      <span><%= libraries.state, %> <%= libraries.zip  %></span>
+      <span><%= libraries.country  %></span>
+      <!-- <p>Submitted by: <%= libraries.username %></p> -->
+    </div>
+    </div>
+
+    </ul> 
+    <div class="col-6 mt-5 mb-5">
+      <a class="btn btn-secondary" href="/profile">Return to Profile</a>
+      <a class="btn btn-secondary" href="/feed">Return to Feed</a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>

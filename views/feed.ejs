@@ -1,0 +1,57 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <h2>Random Library Feed</h2>
+    <ul class="row list-unstyled">
+      <% for(var i=0; i<libraries.length; i++) {%>
+        <li class="col-6 justify-content-between mt-5">
+          <a href="/library/<%= libraries[i]._id%>">
+            <img class="img-fluid" src="<%= libraries[i].image%>">
+          </a>
+        </li>
+      <% } %>
+      </ul>
+  </div>
+</div>  
+
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <h2>Find Library By Location</h2>
+
+    <ul class="row list-unstyled">
+      <!-- <%  function onlyCountries(libraries) { %> -->
+        <% var countries = [] %>
+        <% for(var i=0; l=libraries.length; i<l; i++) %>
+          <% if (countries.indexOf(libraries[i]) === -1 && libraries[i]) !== ' ' ) %>
+          <a href="/library/<%= libraries[i]._id %>">
+              <%= countries.push(libraries[i])%> </a>
+      <!-- <% }%> -->
+      
+    </ul>
+  </div>
+</div>
+
+  function uniqueArray2(arr) {
+    var a = [];
+    for (var i=0, l=arr.length; i<l; i++)
+        if (a.indexOf(arr[i]) === -1 && arr[i] !== '')
+            a.push(arr[i]);
+    return a;
+}
+
+
+
+<div class="container">
+  <div>       
+    <div class="col-6 justify-content-center mt-5 mb-5">
+      <a class="btn btn-secondary" href="/profile">Return to Profile</a>
+      <a class="btn btn-secondary" href="/feed">Return to Feed</a>
+    </div>
+  </div>
+</div>
+
+ 
+
+<%- include('partials/footer') -%>
