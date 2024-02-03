@@ -1,0 +1,64 @@
+<%- include('partials/header') -%>
+
+  <div>       
+    <div class="col-12 justify-content-center text-center mt-5 mb-5">
+      <a class="btn btn-secondary" href="/profile">Your Profile</a>
+      <a class="btn btn-secondary" href="/feed">Return to Feed</a>
+      <a class="btn btn-secondary" href="/location">Libraries by Location</a>
+      <a href="/logout" class="col-1 btn btn-secondary">Logout</a>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <div class="col-5">
+
+      <h2><%= libraries.name %></h2>
+      <img class="img-fluid" src="<%= libraries.image%>" />
+      <div class="row justify-content-between">
+      </div>
+    </div>
+      <div class="col-3 mt-5 mb-5 border h-100">
+        <div class="py-4 px-4"> 
+        <h5 class="text-uppercase">Location:</h5>
+        <BR>
+        <span><%= libraries.address1%>, <%= libraries.city  %></span>
+        <span><%= libraries.state, %>, <%= libraries.zip  %>, </span>
+        <span><%= libraries.country  %></span>
+      </div>
+      <div class="row justify-content-between">
+        <form
+          class="col-1"
+          action="/library/likeLibrary/<%= libraries.id %>?_method=PUT"
+          method="POST">
+
+        <button
+        class="btn"
+        style="background-color: #f4c21e; color: white;"
+        type="submit" >
+
+        <i class="fas fa-heart"></i>
+      </button>
+        </form>
+
+        <h5 class="col-3">Likes: <%= libraries.likes %></h5>
+
+        <%if(libraries.user == user.id) { %>
+        <form
+          action="/library/deleteLibrary/<%= libraries.id %>?_method=DELETE"
+          method="POST"
+          class="col-3">
+          <button 
+          class="btn"
+          style="background-color: #f4c21e; color: white;"
+          type="submit">
+          <i class="fas fa-trash"></i>
+        </button>
+
+        </form>
+        <%}%>
+      </div>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

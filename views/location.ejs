@@ -1,0 +1,36 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+    <div>       
+      <div class="col-12 justify-content-center text-center mt-5 mb-5">
+        <a class="btn btn-secondary" href="/profile">Return to Your Profile</a>
+        <a class="btn btn-secondary" href="/feed">Return to Feed</a>
+        <a href="/logout" class="col-1 btn btn-secondary">Logout</a>
+
+  
+      </div>
+    </div>
+  </div>
+ 
+ 
+  <div class="container">
+    <div class="col justify-content-center m-5 p-5">
+      <h2>Libraries by Location</h2>
+      <ul class="col list-unstyled p-5">
+        <% const libraryList = libraries %> 
+        <% libraryList.sort((a, b) => a.city.localeCompare(b.city)) %>
+        
+        <% libraryList.forEach((library, index) => {
+          if (index === 0 || library.city !== libraryList[index - 1].city) { %>
+              <h4><%= library.city %></h4>
+              <ul class=" list-unstyled pb-4 color-black">
+          <% } %>
+  
+                  <li ><a href="/library/<%= library._id %>" class="black-link link-dark"><%= library.name %></a></li>
+          <% if (index === libraryList.length - 1 || library.city !== libraryList[index + 1].city) { %>
+        </ul>
+          <% } %>
+      <% }) %>
+    </div>
+
+  <%- include('partials/footer') -%>
