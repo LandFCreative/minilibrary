@@ -1,18 +1,19 @@
 <h2> Full Stack App Project with 100 Devs</h2>
 
-<img src="./screenshot/index.png" width=60%/>
-<img src="./screenshot/libraryfeed.png" width=60%/>
-<img src="./screenshot/location.png" width=60%/>
-<img src="./screenshot/profile.png" width=60%/>
+<img src="./minilogin.png" width=60%/>
+<img src="./minifeed.png" width=60%/>
+<img src="./miniprofile.png" width=60%/>
+<img src="./minilocations.png" width=60%/>
 
 <h3>Built with:</h3>
 <ul>
   <li>HTML </li> 
-  <li>BOOTSTRAP + CSS (Flexbox and CSS Grid)</li>
+  <li>Boostrap + CSS (Flexbox and CSS Grid)</li>
   <li>MVC</li>
   <li>MongoDB</li> 
-  <li>NODE.JS</li>
-  <li>CLOUDINARY</li> 
+  <li>NOode.JS</li>
+  <li>CLoudinary</li> 
+    <li>Google Auth</li> 
   
 </ul>
 
